@@ -1,0 +1,13 @@
+version: '3.5'
+volumes:
+  myvol1:
+    name: myvol1
+services:
+  myproxy5:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+     - '8080:80'
+    volumes:
+     - 'myvol1:/usr/share/nginx/html'
